@@ -1,4 +1,5 @@
 import './App.css';
+import Students from './Students';
 
 function coinToss() {
 	return Math.random() < 0.5 ? 'head' : 'tails';
@@ -17,6 +18,8 @@ if (coinToss() === 'head') {
 	img = <img src={pics.dog} className="App-logo" alt="dog" />;
 }
 
+const students = ['shawn', 'Andy', 'Gigi', 'Sam'];
+const studentsList = students.map((person) => <li>{person}</li>);
 function App() {
 	return (
 		<div className="App">
@@ -25,6 +28,8 @@ function App() {
 				<button type="button" className="button">
 					change
 				</button>
+				<ul>{studentsList}</ul>
+				<Students />
 			</header>
 		</div>
 	);

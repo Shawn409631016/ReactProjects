@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
 import Navbar from './navbar';
 import Body from './Body';
 
@@ -12,7 +11,6 @@ root.render(
 	<React.StrictMode>
 		<Navbar />
 		<Body />
-		{/* <App /> */}
 	</React.StrictMode>
 );
 

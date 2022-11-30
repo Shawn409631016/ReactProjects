@@ -1,35 +1,35 @@
+import { useState } from 'react';
 import './App.css';
 import Students from './Students';
 
-function coinToss() {
-	return Math.random() < 0.5 ? 'head' : 'tails';
-}
-
 const pics = {
-	cat: 'https://penntoday.upenn.edu/sites/default/files/2020-02/cat-behavior-teaser.jpg',
 	dog: 'https://content.codecademy.com/courses/React/react_photo-puppy.jpeg',
+	cat: 'https://penntoday.upenn.edu/sites/default/files/2020-02/cat-behavior-teaser.jpg',
 };
-
-let img;
-
-if (coinToss() === 'head') {
-	img = <img src={pics.cat} className="App-logo" alt="cat" />;
-} else {
-	img = <img src={pics.dog} className="App-logo" alt="dog" />;
-}
-
 const students = ['shawn', 'Andy', 'Gigi', 'Sam'];
 const studentsList = students.map((person) => <li>{person}</li>);
+
 function App() {
+	const [img, setImg] = useState(pics.cat);
+	const [css, setUlCss] = useState('ul-close');
+	const changeImg = () => {
+		const imgSwitcher = img === pics.cat ? pics.dog : pics.cat;
+		const displayUl = css === 'ul-close' ? 'ul-open' : 'ul-close';
+		setImg(imgSwitcher);
+		setUlCss(displayUl);
+	};
+
 	return (
 		<div className="App">
 			<header className="App-header">
-				{img}
-				<button type="button" className="button">
+				<img src={img} className="App-logo" alt="pic" />
+				<button onClick={changeImg} type="button" className="button">
 					change
 				</button>
-				<ul>{studentsList}</ul>
-				<Students />
+
+				<ul className={css}>{studentsList}</ul>
+
+				<Students list={studentsList} />
 			</header>
 		</div>
 	);

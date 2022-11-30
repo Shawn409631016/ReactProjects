@@ -29,11 +29,31 @@
 }
 
 .button {
-	margin-top: 15px;
-	background-color: #61dafb;
-	border-radius: 45px;
+	margin-top: 20px;
+	background-color: #f4595b;
+	border-radius: 8px;
+	border-bottom: 4px solid #c24648;
+	color: white;
+	font-size: 16px;
+	padding: 15px 32px;
+	text-align: center;
+	cursor: pointer;
 }
-
+button:hover {
+	background-color: #ff7375;
+}
+button:active {
+	background-color: #c24648;
+	color: #ccc;
+	border: none;
+	margin-bottom: 4px;
+}
+.ul-close {
+	display: none;
+}
+.ul-open {
+	display: block;
+}
 /* @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
